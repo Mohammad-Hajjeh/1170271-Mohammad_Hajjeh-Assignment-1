@@ -12,9 +12,7 @@
         android:id="@+id/imageView"
         android:layout_width="312dp"
         android:layout_height="95dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="55dp"
+        android:layout_marginStart="55dp"
         android:layout_marginTop="15dp"
         android:src="@drawable/registrationlogo" />
 
@@ -27,15 +25,15 @@
             android:id="@+id/firstNameInput"
             style="@style/EditStyle"
             android:layout_width="205dp"
-            android:drawableLeft="@drawable/ic_person"
-            android:hint="First Name"
+            android:drawableStart="@drawable/ic_person"
+            android:hint="@string/first_name"
             android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/lastNameInput"
             style="@style/EditStyle"
-            android:drawableLeft="@drawable/ic_person"
-            android:hint="Last Name"
+            android:drawableStart="@drawable/ic_person"
+            android:hint="@string/last_name"
             android:inputType="textPersonName" />
 
     </LinearLayout>
@@ -43,29 +41,29 @@
     <EditText
         android:id="@+id/emailAddressInput"
         style="@style/EditStyle"
-        android:drawableLeft="@drawable/ic_email"
-        android:hint="Email Address"
+        android:drawableStart="@drawable/ic_email"
+        android:hint="@string/email_address"
         android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/phoneNumberInput"
         style="@style/EditStyle"
-        android:drawableLeft="@drawable/ic_phone"
-        android:hint="Number"
+        android:drawableStart="@drawable/ic_phone"
+        android:hint="@string/number"
         android:inputType="textPersonName|phone" />
 
     <EditText
         android:id="@+id/passwordInput"
         style="@style/EditStyle"
-        android:drawableLeft="@drawable/ic_lock"
-        android:hint="Password"
+        android:drawableStart="@drawable/ic_lock"
+        android:hint="@string/password"
         android:inputType="textPassword" />
 
     <EditText
         android:id="@+id/confirmPasswordInput"
         style="@style/EditStyle"
-        android:drawableLeft="@drawable/ic_lock"
-        android:hint="Confirm Password"
+        android:drawableStart="@drawable/ic_lock"
+        android:hint="@string/confirm_password"
         android:inputType="textPassword"
         android:textColor="@color/black" />
 
@@ -81,10 +79,10 @@
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:drawableLeft="@drawable/calendar"
             android:gravity="center"
             android:textColor="@color/black"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/calendar" />
 
         <Spinner
             android:id="@+id/spinnerMonth"
@@ -100,7 +98,7 @@
 
         <Spinner
             android:id="@+id/spinnerYear"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
     </LinearLayout>
@@ -109,9 +107,8 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:layout_marginLeft="10dp"
-        android:text="DB"
+        android:layout_marginStart="10dp"
+        android:text="@string/db"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -124,31 +121,25 @@
 
         <Switch
             android:id="@+id/switch1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:drawableLeft="@drawable/couple"
-            android:gravity="center"
-
-            android:text="  Married" />
+            android:layout_marginStart="5dp"
+            android:drawableStart="@drawable/couple"
+            android:text="@string/married"
+            style="@style/switchStyle"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <Switch
             android:id="@+id/switch3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:drawableLeft="@drawable/book"
-            android:gravity="center"
-            android:text="  Study" />
+            android:drawableStart="@drawable/book"
+            android:text="@string/study"
+            style="@style/switchStyle"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <Switch
             android:id="@+id/switch2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:drawableLeft="@drawable/employee"
-            android:gravity="center"
-            android:text="Work" />
+            android:drawableStart="@drawable/employee"
+            android:text="@string/work"
+            style="@style/switchStyle"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
     </LinearLayout>
 
     <LinearLayout
@@ -159,54 +150,47 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="60dp"
+            android:layout_width="96dp"
             android:layout_height="32dp"
-            android:drawableLeft="@drawable/gender"
+            android:layout_marginStart="13dp"
             android:gravity="center"
+            android:text="@string/gender"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginLeft="13dp"/>
+            app:drawableStartCompat="@drawable/gender" />
 
         <RadioButton
             android:id="@+id/radioButtonMale"
-            android:layout_width="122dp"
+            android:layout_width="124dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="0dp"
             android:layout_weight="1"
-            android:drawableLeft="@drawable/male"
-            android:text="Male" />
+            android:drawableStart="@drawable/male"
+            android:text="@string/male" />
 
         <RadioButton
             android:id="@+id/radioButtonFemale"
             android:layout_width="129dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:layout_weight="1"
-            android:drawableLeft="@drawable/female"
-            android:text="Female" />
+            android:drawableStart="@drawable/female"
+            android:text="@string/female" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:text="Gender"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
 
     <CheckBox
         android:id="@+id/checkBox"
-        android:layout_width="match_parent"
+        android:layout_width="202dp"
         android:layout_height="32dp"
-        android:layout_marginLeft="120dp"
+        android:layout_marginStart="120dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="70dp"
+        android:layout_marginEnd="70dp"
 
         android:backgroundTint="@color/black"
-        android:text="Agree to terms &amp; privacy"
+        android:text="@string/agree_to_terms_amp_privacy"
         android:textColor="@color/black"
         android:textStyle="bold" />
 
@@ -214,13 +198,10 @@
         android:id="@+id/registerButton"
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="150dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="10dp"
         android:background="@color/black"
-        android:text="Register"
+        android:text="@string/register"
         android:textColor="@color/teal_700"
         android:textSize="24sp"
         android:textStyle="bold" />
