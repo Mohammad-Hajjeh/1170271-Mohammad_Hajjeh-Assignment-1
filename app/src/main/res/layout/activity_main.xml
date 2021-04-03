@@ -18,20 +18,27 @@
         android:layout_marginTop="15dp"
         android:src="@drawable/registrationlogo" />
 
-    <EditText
-        android:id="@+id/firstNameInput"
-        style="@style/EditStyle"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:drawableLeft="@drawable/ic_person"
-        android:hint="First Name"
-        android:inputType="textPersonName" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/lastNameInput"
-        style="@style/EditStyle"
-        android:drawableLeft="@drawable/ic_person"
-        android:hint="Last Name"
-        android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/firstNameInput"
+            style="@style/EditStyle"
+            android:layout_width="205dp"
+            android:drawableLeft="@drawable/ic_person"
+            android:hint="First Name"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/lastNameInput"
+            style="@style/EditStyle"
+            android:drawableLeft="@drawable/ic_person"
+            android:hint="Last Name"
+            android:inputType="textPersonName" />
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/emailAddressInput"
@@ -111,6 +118,41 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:drawableLeft="@drawable/couple"
+            android:gravity="center"
+
+            android:text="  Married" />
+
+        <Switch
+            android:id="@+id/switch3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/book"
+            android:gravity="center"
+            android:text="  Study" />
+
+        <Switch
+            android:id="@+id/switch2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/employee"
+            android:gravity="center"
+            android:text="Work" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:orientation="horizontal">
@@ -149,11 +191,23 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:text="Gender"
         android:textColor="@color/black"
         android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="70dp"
+
+        android:backgroundTint="@color/black"
+        android:text="Agree to terms &amp; privacy"
+        android:textColor="@color/black"
         android:textStyle="bold" />
 
     <Button
@@ -163,12 +217,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="130dp"
+        android:layout_marginLeft="150dp"
         android:layout_marginTop="10dp"
         android:background="@color/black"
         android:text="Register"
         android:textColor="@color/teal_700"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
 
 </LinearLayout>
