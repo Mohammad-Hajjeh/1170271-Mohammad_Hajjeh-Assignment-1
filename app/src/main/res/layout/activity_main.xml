@@ -120,6 +120,22 @@
         android:orientation="horizontal">
 
         <Switch
+            android:id="@+id/switch3"
+            style="@style/switchStyle"
+            android:layout_width="122dp"
+            android:layout_marginLeft="10dp"
+            android:drawableStart="@drawable/book"
+            android:text="@string/study"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <Switch
+            android:id="@+id/switch2"
+            style="@style/switchStyle"
+            android:drawableStart="@drawable/employee"
+            android:text="@string/work"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <Switch
             android:id="@+id/switch1"
             android:layout_marginStart="5dp"
             android:drawableStart="@drawable/couple"
@@ -127,19 +143,6 @@
             style="@style/switchStyle"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-        <Switch
-            android:id="@+id/switch3"
-            android:drawableStart="@drawable/book"
-            android:text="@string/study"
-            style="@style/switchStyle"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-        <Switch
-            android:id="@+id/switch2"
-            android:drawableStart="@drawable/employee"
-            android:text="@string/work"
-            style="@style/switchStyle"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
     </LinearLayout>
 
     <LinearLayout
