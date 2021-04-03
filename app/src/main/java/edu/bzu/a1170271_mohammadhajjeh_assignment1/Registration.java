@@ -2,22 +2,29 @@ package edu.bzu.a1170271_mohammadhajjeh_assignment1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.ToggleButton;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+public class Registration extends AppCompatActivity {
     Spinner yearSpinner;
     Spinner monthSpinner;
     Spinner daySpinner;
+    RadioGroup radioGroup;
+    RadioButton radioButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_registeration);
         final EditText emailAddressInputField = (EditText) findViewById(R.id.emailAddressInput);
         final EditText firstNameInputField = (EditText) findViewById(R.id.firstNameInput);
         final EditText lastNameInputField = (EditText) findViewById(R.id.lastNameInput);
@@ -27,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         monthSpinner = (Spinner) findViewById(R.id.spinnerMonth);
         daySpinner = (Spinner) findViewById(R.id.spinnerDay);
         yearSpinner = (Spinner) findViewById(R.id.spinnerYear);
+        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         populateSpinner();
     }
 
@@ -59,5 +67,14 @@ public class MainActivity extends AppCompatActivity {
             arrayListYear.add(i+"");
         ArrayAdapter<String> arrayAdapterYear = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,arrayListYear);
         yearSpinner.setAdapter(arrayAdapterYear);
+    }
+
+    public void register_onClick(View view) {
+        Intent intent = new Intent(this,ProfileInformation.class);
+        int radioId = radioGroup.getCheckedRadioButtonId();
+        radioButton = findViewById(radioId);
+        intent.putExtra("GENDER",radioButton.getText());
+        startActivity(intent);
+
     }
 }

@@ -7,7 +7,7 @@
     <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="db">DB</string>
-    <string name="married">Married</string>
+    <string name="married"> Married</string>
     <string name="study">Study</string>
     <string name="work">Work</string>
     <string name="gender">  Gender</string>
@@ -15,4 +15,5 @@
     <string name="female">Female</string>
     <string name="agree_to_terms_amp_privacy"><![CDATA[Agree to terms & privacy]]></string>
     <string name="first_name">First Name</string>
+    <string name="nav_header_desc" />
 </resources>

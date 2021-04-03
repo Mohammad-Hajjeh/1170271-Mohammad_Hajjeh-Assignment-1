@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bluebg"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".Registration">
 
     <ImageView
         android:id="@+id/imageView"
@@ -75,7 +75,7 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="85dp"
+            android:layout_width="79dp"
             android:layout_height="32dp"
             android:layout_marginStart="13dp"
             android:gravity="center"
@@ -84,25 +84,33 @@
             android:textStyle="bold"
             app:drawableStartCompat="@drawable/gender" />
 
-        <RadioButton
-            android:id="@+id/radioButtonMale"
-            android:layout_width="124dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="0dp"
-            android:layout_weight="1"
-            android:drawableStart="@drawable/male"
-            android:text="@string/male" />
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/radioButtonFemale"
-            android:layout_width="129dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_weight="1"
-            android:drawableStart="@drawable/female"
-            android:text="@string/female" />
+            <RadioButton
+                android:id="@+id/radioButtonMale"
+                android:layout_width="124dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="0dp"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/male"
+                android:text="@string/male" />
+
+            <RadioButton
+                android:id="@+id/radioButtonFemale"
+                android:layout_width="129dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/female"
+                android:text="@string/female" />
+        </RadioGroup>
+
     </LinearLayout>
 
     <TextView
@@ -169,7 +177,7 @@
         <Switch
             android:id="@+id/switch3"
             style="@style/switchStyle"
-            android:layout_width="118dp"
+            android:layout_width="130dp"
             android:layout_marginLeft="10dp"
             android:drawableStart="@drawable/book"
             android:text="@string/study"
@@ -178,16 +186,17 @@
         <Switch
             android:id="@+id/switch2"
             style="@style/switchStyle"
-            android:drawableStart="@drawable/employee"
+            android:layout_width="118dp"
+            android:drawableStart="@drawable/work"
             android:text="@string/work"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <Switch
             android:id="@+id/switch1"
+            style="@style/switchStyle"
             android:layout_marginStart="5dp"
             android:drawableStart="@drawable/couple"
-            android:text="@string/married"
-            style="@style/switchStyle"
+            android:text=" Married"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     </LinearLayout>
@@ -210,8 +219,9 @@
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:background="@color/black"
+        android:onClick="register_onClick"
         android:text="@string/register"
         android:textColor="@color/teal_700"
         android:textSize="24sp"
