@@ -18,19 +18,29 @@ public class ProfileInformation extends AppCompatActivity {
         final TextView nameTxt = (TextView) findViewById(R.id.nameTxt);
         final TextView emailTxt = (TextView) findViewById(R.id.emailTxt);
         final TextView phoneTxt = (TextView) findViewById(R.id.phoneTxt);
+        final TextView calendarTxt = (TextView) findViewById(R.id.calendarTxt);
+        final TextView passwordTxt = (TextView) findViewById(R.id.passwordTxt);
         Intent intent = getIntent();
         String name = intent.getStringExtra("NAME");
         String email = intent.getStringExtra("EMAIL");
         String phone = intent.getStringExtra("PHONE");
         String gender = intent.getStringExtra("GENDER");
+        String month = intent.getStringExtra("MONTH");
+        String day = intent.getStringExtra("DAY");
+        String year = intent.getStringExtra("YEAR");
+        String password = intent.getStringExtra("PASSWORD");
         nameTxt.setText(" " + name);
         emailTxt.setText(" " + email);
-        phoneTxt.setText(phone);
+        phoneTxt.setText(" "+phone);
+        calendarTxt.setText("   "+month+" "+day+","+year);
+        passwordTxt.setText("  "+password);
         if (gender.equalsIgnoreCase("female")) {
             profileHeaderImage.setImageResource(R.drawable.femalep);
             nameTxt.setTextColor(Color.parseColor("#ffff8800"));
             emailTxt.setTextColor(Color.parseColor("#ffff8800"));
             phoneTxt.setTextColor(Color.parseColor("#ffff8800"));
+            calendarTxt.setTextColor(Color.parseColor("#ffff8800"));
+            passwordTxt.setTextColor(Color.parseColor("#ffff8800"));
 
         }
         else {
@@ -38,6 +48,9 @@ public class ProfileInformation extends AppCompatActivity {
             nameTxt.setTextColor(Color.parseColor("#ff33b5e5"));
             emailTxt.setTextColor(Color.parseColor("#ff33b5e5"));
             phoneTxt.setTextColor(Color.parseColor("#ff33b5e5"));
+            calendarTxt.setTextColor(Color.parseColor("#ff33b5e5"));
+            passwordTxt.setTextColor(Color.parseColor("#ff33b5e5"));
+
         }
     }
 }

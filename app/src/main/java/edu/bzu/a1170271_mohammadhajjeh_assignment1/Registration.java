@@ -85,8 +85,11 @@ public class Registration extends AppCompatActivity {
         intent.putExtra("NAME",firstNameInputField.getText()+" "+lastNameInputField.getText());
         intent.putExtra("EMAIL",emailAddressInputField.getText().toString());
         intent.putExtra("PHONE",phoneNumberInputField.getText().toString());
+        intent.putExtra("MONTH",monthSpinner.getSelectedItem().toString());
+        intent.putExtra("DAY",daySpinner.getSelectedItem().toString());
+        intent.putExtra("YEAR",yearSpinner.getSelectedItem().toString());
         intent.putExtra("GENDER",radioButton.getText());
-
+        intent.putExtra("PASSWORD",passwordInputField.getText().toString().trim());
         startActivity(intent);
 
     }
