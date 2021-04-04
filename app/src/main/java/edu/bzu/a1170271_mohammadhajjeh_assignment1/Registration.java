@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.util.ArrayList;
@@ -23,6 +25,7 @@ public class Registration extends AppCompatActivity {
     RadioGroup radioGroup;
     RadioButton radioButton;
     RadioButton radioMale;
+    RadioButton radioFemale;
     EditText emailAddressInputField;
     EditText firstNameInputField;
     EditText lastNameInputField;
@@ -32,6 +35,7 @@ public class Registration extends AppCompatActivity {
     Switch studySwitch;
     Switch workSwitch;
     Switch marriedSwitch;
+    CheckBox agreeCheckBox;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,9 +51,11 @@ public class Registration extends AppCompatActivity {
         yearSpinner = (Spinner) findViewById(R.id.spinnerYear);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         radioMale = (RadioButton) findViewById(R.id.radioButtonMale);
+        radioFemale = (RadioButton) findViewById(R.id.radioButtonFemale);
         studySwitch = (Switch) findViewById(R.id.studentSwitch);
         workSwitch = (Switch) findViewById(R.id.workSwitch);
         marriedSwitch = (Switch) findViewById(R.id.marriedSwitch);
+        agreeCheckBox =(CheckBox) findViewById(R.id.agreecheckBox);
         radioMale.toggle();
         populateSpinner();
     }
@@ -109,8 +115,41 @@ public class Registration extends AppCompatActivity {
             intent.putExtra("MARRIED","YES");
         else
             intent.putExtra("MARRIED","NO");
+        if(firstNameInputField.getText().toString().isEmpty())
+            Toast.makeText(this, "Fill First Name", Toast.LENGTH_SHORT).show();
+        else if(lastNameInputField.getText().toString().isEmpty())
+            Toast.makeText(this, "Fill Last Name", Toast.LENGTH_SHORT).show();
+        else if(emailAddressInputField.getText().toString().isEmpty())
+            Toast.makeText(this, "Fill Email Address", Toast.LENGTH_SHORT).show();
+        else if(phoneNumberInputField.getText().toString().isEmpty())
+            Toast.makeText(this, "Fill Number", Toast.LENGTH_SHORT).show();
+        else if(passwordInputField.getText().toString().isEmpty())
+            Toast.makeText(this, "Fill Password", Toast.LENGTH_SHORT).show();
+        else if(confirmPasswordInputField.getText().toString().isEmpty())
+            Toast.makeText(this, "Fill Confirm Password", Toast.LENGTH_SHORT).show();
+        else if(!(passwordInputField.getText().toString().equals(confirmPasswordInputField.getText().toString())))
+            Toast.makeText(this, "Not Match Password", Toast.LENGTH_SHORT).show();
+        else if(monthSpinner.getSelectedItem().toString().equalsIgnoreCase("Month"))
+            Toast.makeText(this, "Fill Month Of Birthday", Toast.LENGTH_SHORT).show();
+        else if(daySpinner.getSelectedItem().toString().equalsIgnoreCase("Day"))
+            Toast.makeText(this, "Fill Day Of Birthday", Toast.LENGTH_SHORT).show();
+        else if(yearSpinner.getSelectedItem().toString().equalsIgnoreCase("Year"))
+            Toast.makeText(this, "Fill Year Of Birthday", Toast.LENGTH_SHORT).show();
+        else if(!agreeCheckBox.isChecked())
+            Toast.makeText(this, "Agree Terms & Privacy", Toast.LENGTH_SHORT).show();
 
-
+        if(!firstNameInputField.getText().toString().isEmpty()
+                && !lastNameInputField.getText().toString().isEmpty()
+                && !emailAddressInputField.getText().toString().isEmpty()
+                && !phoneNumberInputField.getText().toString().isEmpty()
+                && !passwordInputField.getText().toString().isEmpty()
+                && !confirmPasswordInputField.getText().toString().isEmpty()
+                && passwordInputField.getText().toString().equals(confirmPasswordInputField.getText().toString())
+                && !monthSpinner.getSelectedItem().toString().equalsIgnoreCase("Month")
+                && !daySpinner.getSelectedItem().toString().equalsIgnoreCase("Day")
+                && !yearSpinner.getSelectedItem().toString().equalsIgnoreCase("Year")
+                && agreeCheckBox.isChecked()
+        )
         startActivity(intent);
 
     }
