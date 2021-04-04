@@ -186,7 +186,8 @@
         <Switch
             android:id="@+id/switch2"
             style="@style/switchStyle"
-            android:layout_width="118dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:drawableStart="@drawable/work"
             android:text="@string/work"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
@@ -194,6 +195,8 @@
         <Switch
             android:id="@+id/switch1"
             style="@style/switchStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
             android:layout_marginStart="5dp"
             android:drawableStart="@drawable/couple"
             android:text=" Married"

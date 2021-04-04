@@ -21,20 +21,29 @@ public class Registration extends AppCompatActivity {
     Spinner daySpinner;
     RadioGroup radioGroup;
     RadioButton radioButton;
+    RadioButton radioMale;
+    EditText emailAddressInputField;
+    EditText firstNameInputField;
+    EditText lastNameInputField;
+    EditText passwordInputField;
+    EditText confirmPasswordInputField;
+    EditText phoneNumberInputField;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registeration);
-        final EditText emailAddressInputField = (EditText) findViewById(R.id.emailAddressInput);
-        final EditText firstNameInputField = (EditText) findViewById(R.id.firstNameInput);
-        final EditText lastNameInputField = (EditText) findViewById(R.id.lastNameInput);
-        final EditText passwordInputField = (EditText) findViewById(R.id.passwordInput);
-        final EditText confirmPasswordInputField = (EditText) findViewById(R.id.confirmPasswordInput);
-        final EditText phoneNumberInputField = (EditText) findViewById(R.id.phoneNumberInput);
+        emailAddressInputField = (EditText) findViewById(R.id.emailAddressInput);
+        firstNameInputField = (EditText) findViewById(R.id.firstNameInput);
+        lastNameInputField = (EditText) findViewById(R.id.lastNameInput);
+        passwordInputField = (EditText) findViewById(R.id.passwordInput);
+        confirmPasswordInputField = (EditText) findViewById(R.id.confirmPasswordInput);
+        phoneNumberInputField = (EditText) findViewById(R.id.phoneNumberInput);
         monthSpinner = (Spinner) findViewById(R.id.spinnerMonth);
         daySpinner = (Spinner) findViewById(R.id.spinnerDay);
         yearSpinner = (Spinner) findViewById(R.id.spinnerYear);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        radioMale = (RadioButton) findViewById(R.id.radioButtonMale);
+        radioMale.toggle();
         populateSpinner();
     }
 
@@ -73,7 +82,11 @@ public class Registration extends AppCompatActivity {
         Intent intent = new Intent(this,ProfileInformation.class);
         int radioId = radioGroup.getCheckedRadioButtonId();
         radioButton = findViewById(radioId);
+        intent.putExtra("NAME",firstNameInputField.getText()+" "+lastNameInputField.getText());
+        intent.putExtra("EMAIL",emailAddressInputField.getText().toString());
+        intent.putExtra("PHONE",phoneNumberInputField.getText().toString());
         intent.putExtra("GENDER",radioButton.getText());
+
         startActivity(intent);
 
     }
