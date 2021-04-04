@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.ToggleButton;
 
 import java.util.ArrayList;
@@ -28,6 +29,9 @@ public class Registration extends AppCompatActivity {
     EditText passwordInputField;
     EditText confirmPasswordInputField;
     EditText phoneNumberInputField;
+    Switch studySwitch;
+    Switch workSwitch;
+    Switch marriedSwitch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +47,9 @@ public class Registration extends AppCompatActivity {
         yearSpinner = (Spinner) findViewById(R.id.spinnerYear);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         radioMale = (RadioButton) findViewById(R.id.radioButtonMale);
+        studySwitch = (Switch) findViewById(R.id.studentSwitch);
+        workSwitch = (Switch) findViewById(R.id.workSwitch);
+        marriedSwitch = (Switch) findViewById(R.id.marriedSwitch);
         radioMale.toggle();
         populateSpinner();
     }
@@ -90,6 +97,20 @@ public class Registration extends AppCompatActivity {
         intent.putExtra("YEAR",yearSpinner.getSelectedItem().toString());
         intent.putExtra("GENDER",radioButton.getText());
         intent.putExtra("PASSWORD",passwordInputField.getText().toString().trim());
+        if(studySwitch.isChecked())
+            intent.putExtra("STUDY","YES");
+        else
+            intent.putExtra("STUDY","NO");
+        if(workSwitch.isChecked())
+            intent.putExtra("WORK","YES");
+        else
+            intent.putExtra("WORK","NO");
+        if(marriedSwitch.isChecked())
+            intent.putExtra("MARRIED","YES");
+        else
+            intent.putExtra("MARRIED","NO");
+
+
         startActivity(intent);
 
     }
