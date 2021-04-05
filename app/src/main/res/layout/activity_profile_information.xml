@@ -39,52 +39,52 @@
         style="@style/txtView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/ic_email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameTxt"
-        app:layout_constraintVertical_bias="0.09" />
+        app:layout_constraintVertical_bias="0.09"
+        app:drawableLeftCompat="@drawable/ic_email" />
 
     <TextView
         android:id="@+id/phoneTxt"
         style="@style/txtView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/ic_phone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailTxt"
-        app:layout_constraintVertical_bias="0.217" />
+        app:layout_constraintVertical_bias="0.217"
+        app:drawableStartCompat="@drawable/ic_phone" />
 
     <TextView
         android:id="@+id/calendarTxt"
         style="@style/txtView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/calendar"
         app:layout_constraintBottom_toTopOf="@+id/phoneTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/genderTxt"
-        app:layout_constraintVertical_bias="0.428" />
+        app:layout_constraintVertical_bias="0.428"
+        app:drawableLeftCompat="@drawable/calendar" />
 
     <TextView
         android:id="@+id/passwordTxt"
         style="@style/txtView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/ic_lock"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phoneTxt"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintVertical_bias="0.037"
+        app:drawableLeftCompat="@drawable/ic_lock" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -104,9 +104,9 @@
             style="@style/txtView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/book"
+            android:drawableStart="@drawable/book"
             android:gravity="center"
-            android:text=" Study"
+            android:text="@string/study"
             android:textSize="14sp"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
@@ -115,8 +115,8 @@
             style="@style/txtView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/work"
-            android:text=" Work"
+            android:drawableStart="@drawable/work"
+            android:text="@string/work"
             android:textSize="14sp"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
@@ -125,8 +125,8 @@
             style="@style/txtView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ring"
-            android:text=" Married"
+            android:drawableStart="@drawable/ring"
+            android:text="@string/married"
             android:textSize="14sp"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
     </LinearLayout>
@@ -136,27 +136,34 @@
         style="@style/txtView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/gender"
         app:layout_constraintBottom_toTopOf="@+id/phoneTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailTxt"
-        app:layout_constraintVertical_bias="0.169" />
+        app:layout_constraintVertical_bias="0.169"
+        app:drawableLeftCompat="@drawable/gender" />
 
     <Button
         android:id="@+id/backRegisterButton"
-        android:layout_width="301dp"
-        android:layout_height="57dp"
-        android:background="@color/black"
         android:onClick="back_register_onClick"
-        android:text="Back To Registeter"
-        android:textColor="@color/teal_700"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:text="@string/back_to_registeter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.319"
+        style="@style/but" />
+
+    <Button
+        android:id="@+id/exitButton"
+        android:onClick="register_onClick"
+        android:text="Exit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backRegisterButton"
+        app:layout_constraintVertical_bias="0.098"
+        style="@style/but"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

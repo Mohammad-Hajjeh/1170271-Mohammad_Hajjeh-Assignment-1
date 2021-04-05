@@ -28,6 +28,8 @@ public class ProfileInformation extends AppCompatActivity {
         final Switch workSwitch = (Switch) findViewById(R.id.workedSwitch);
         final Switch marriedSwitch = (Switch) findViewById(R.id.marrySwitch);
         final Button backToRegister = (Button) findViewById(R.id.backRegisterButton);
+        final Button exitButton = (Button) findViewById(R.id.exitButton);
+
         Intent intent = getIntent();
         String name = intent.getStringExtra("NAME");
         String email = intent.getStringExtra("EMAIL");
@@ -70,6 +72,8 @@ public class ProfileInformation extends AppCompatActivity {
             workSwitch.setTextColor(Color.parseColor("#ffff8800"));
             marriedSwitch.setTextColor(Color.parseColor("#ffff8800"));
             backToRegister.setTextColor(Color.parseColor("#ffff8800"));
+            exitButton.setTextColor(Color.parseColor("#ffff8800"));
+
         }
         else {
             genderTxt.setText(" Male");
@@ -84,11 +88,18 @@ public class ProfileInformation extends AppCompatActivity {
             workSwitch.setTextColor(Color.parseColor("#ff33b5e5"));
             marriedSwitch.setTextColor(Color.parseColor("#ff33b5e5"));
             backToRegister.setTextColor(Color.parseColor("#ff33b5e5"));
+            exitButton.setTextColor(Color.parseColor("#ff33b5e5"));
 
         }
     }
 
     public void back_register_onClick(View view) {
+        finish();
+        System.exit(0);
+
+    }
+
+    public void register_onClick(View view) {
         Intent intent = new Intent(this,Registration.class);
         startActivity(intent);
     }

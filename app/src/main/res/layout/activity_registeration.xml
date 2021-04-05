@@ -14,7 +14,8 @@
         android:layout_height="95dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="15dp"
-        android:src="@drawable/registrationlogo" />
+        android:src="@drawable/registrationlogo"
+        android:contentDescription="@string/todo" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,14 +28,16 @@
             android:layout_width="205dp"
             android:drawableStart="@drawable/ic_person"
             android:hint="@string/first_name"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/lastNameInput"
             style="@style/EditStyle"
             android:drawableStart="@drawable/ic_person"
             android:hint="@string/last_name"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:autofillHints="" />
 
     </LinearLayout>
 
@@ -43,21 +46,24 @@
         style="@style/EditStyle"
         android:drawableStart="@drawable/ic_email"
         android:hint="@string/email_address"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/phoneNumberInput"
         style="@style/EditStyle"
         android:drawableStart="@drawable/ic_phone"
         android:hint="@string/number"
-        android:inputType="textPersonName|phone" />
+        android:inputType="textPersonName|phone"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/passwordInput"
         style="@style/EditStyle"
         android:drawableStart="@drawable/ic_lock"
         android:hint="@string/password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/confirmPasswordInput"
@@ -65,7 +71,8 @@
         android:drawableStart="@drawable/ic_lock"
         android:hint="@string/confirm_password"
         android:inputType="textPassword"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:autofillHints="" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -117,7 +124,7 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" Gender"
+        android:text="@string/gender"
         android:textColor="@color/black"
         android:textStyle="bold" />
 
@@ -178,7 +185,7 @@
             android:id="@+id/studentSwitch"
             style="@style/switchStyle"
             android:layout_width="126dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:drawableStart="@drawable/book"
             android:text="@string/study"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
@@ -199,7 +206,7 @@
             android:layout_height="34dp"
             android:layout_marginStart="5dp"
             android:drawableStart="@drawable/ring"
-            android:text=" Married"
+            android:text="@string/married"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     </LinearLayout>
