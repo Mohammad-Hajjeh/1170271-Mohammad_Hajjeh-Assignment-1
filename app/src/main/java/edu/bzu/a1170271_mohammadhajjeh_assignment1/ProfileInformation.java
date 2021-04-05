@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -25,6 +27,7 @@ public class ProfileInformation extends AppCompatActivity {
         final Switch studySwitch = (Switch) findViewById(R.id.studySwitch);
         final Switch workSwitch = (Switch) findViewById(R.id.workedSwitch);
         final Switch marriedSwitch = (Switch) findViewById(R.id.marrySwitch);
+        final Button backToRegister = (Button) findViewById(R.id.backRegisterButton);
         Intent intent = getIntent();
         String name = intent.getStringExtra("NAME");
         String email = intent.getStringExtra("EMAIL");
@@ -66,6 +69,7 @@ public class ProfileInformation extends AppCompatActivity {
             studySwitch.setTextColor(Color.parseColor("#ffff8800"));
             workSwitch.setTextColor(Color.parseColor("#ffff8800"));
             marriedSwitch.setTextColor(Color.parseColor("#ffff8800"));
+            backToRegister.setTextColor(Color.parseColor("#ffff8800"));
         }
         else {
             genderTxt.setText(" Male");
@@ -79,7 +83,13 @@ public class ProfileInformation extends AppCompatActivity {
             studySwitch.setTextColor(Color.parseColor("#ff33b5e5"));
             workSwitch.setTextColor(Color.parseColor("#ff33b5e5"));
             marriedSwitch.setTextColor(Color.parseColor("#ff33b5e5"));
+            backToRegister.setTextColor(Color.parseColor("#ff33b5e5"));
 
         }
+    }
+
+    public void back_register_onClick(View view) {
+        Intent intent = new Intent(this,Registration.class);
+        startActivity(intent);
     }
 }
