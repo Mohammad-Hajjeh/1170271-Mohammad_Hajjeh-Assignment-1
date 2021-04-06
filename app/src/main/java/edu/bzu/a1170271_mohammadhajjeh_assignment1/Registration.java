@@ -150,6 +150,7 @@ public class Registration extends AppCompatActivity {
                 && !yearSpinner.getSelectedItem().toString().equalsIgnoreCase("Year")
                 && agreeCheckBox.isChecked()
         )
+
         startActivity(intent);
 
     }

@@ -42,6 +42,9 @@ public class ProfileInformation extends AppCompatActivity {
         String study = intent.getStringExtra("STUDY");
         String work = intent.getStringExtra("WORK");
         String married = intent.getStringExtra("MARRIED");
+        studySwitch.setClickable(false);
+        workSwitch.setClickable(false);
+        marriedSwitch.setClickable(false);
         if(study.equalsIgnoreCase("yes"))
         studySwitch.setChecked(true);
         else
@@ -60,7 +63,7 @@ public class ProfileInformation extends AppCompatActivity {
         calendarTxt.setText("   "+month+" "+day+","+year);
         passwordTxt.setText("  "+password);
         if (gender.equalsIgnoreCase("female")) {
-            genderTxt.setText(" Female");
+            genderTxt.setText("  Female");
             profileHeaderImage.setImageResource(R.drawable.femalep);
             nameTxt.setTextColor(Color.parseColor("#ffff8800"));
             emailTxt.setTextColor(Color.parseColor("#ffff8800"));
@@ -76,7 +79,7 @@ public class ProfileInformation extends AppCompatActivity {
 
         }
         else {
-            genderTxt.setText(" Male");
+            genderTxt.setText("  Male");
             profileHeaderImage.setImageResource(R.drawable.malep);
             nameTxt.setTextColor(Color.parseColor("#ff33b5e5"));
             emailTxt.setTextColor(Color.parseColor("#ff33b5e5"));
