@@ -146,14 +146,14 @@
 
     <Button
         android:id="@+id/backRegisterButton"
+        style="@style/but"
         android:onClick="back_register_onClick"
-        android:text="@string/back_to_registeter"
+        android:text="@string/back_to_register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.319"
-        style="@style/but" />
+        app:layout_constraintVertical_bias="0.319" />
 
     <Button
         android:id="@+id/exitButton"

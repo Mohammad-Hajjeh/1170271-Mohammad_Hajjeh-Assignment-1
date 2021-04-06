@@ -29,7 +29,6 @@ public class ProfileInformation extends AppCompatActivity {
         final Switch marriedSwitch = (Switch) findViewById(R.id.marrySwitch);
         final Button backToRegister = (Button) findViewById(R.id.backRegisterButton);
         final Button exitButton = (Button) findViewById(R.id.exitButton);
-
         Intent intent = getIntent();
         String name = intent.getStringExtra("NAME");
         String email = intent.getStringExtra("EMAIL");
@@ -58,7 +57,7 @@ public class ProfileInformation extends AppCompatActivity {
         else
             marriedSwitch.setChecked(false);
         nameTxt.setText(" " + name);
-        emailTxt.setText(" " + email);
+        emailTxt.setText("  " + email);
         phoneTxt.setText(" "+phone);
         calendarTxt.setText("   "+month+" "+day+","+year);
         passwordTxt.setText("  "+password);

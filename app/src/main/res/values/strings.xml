@@ -16,6 +16,6 @@
     <string name="agree_to_terms_amp_privacy"><![CDATA[Agree to terms & privacy]]></string>
     <string name="first_name">First Name</string>
     <string name="nav_header_desc" />
-    <string name="back_to_registeter">Edit Information</string>
+    <string name="back_to_register">Edit Information</string>
     <string name="todo">TODO</string>
 </resources>
